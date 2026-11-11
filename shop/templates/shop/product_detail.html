@@ -1,0 +1,13 @@
+{% extends 'shop/base.html' %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block content %}
+    <div style="background: white; padding: 20px; width: 100%; border-radius: 8px;">
+        <h1>{{ product.name }}</h1>
+        <p>Производитель: <b>{{ product.manufacturer.name }}</b></p>
+        <h2 class="price">{{ product.price }} руб.</h2>
+        <p>{% if product.in_stock %}В наличии{% else %}Нет в наличии{% endif %}</p>
+        <hr>
+        <p>{{ product.description }}</p>
+        <a href="/">← Назад в каталог</a>
+    </div>
+{% endblock %}
